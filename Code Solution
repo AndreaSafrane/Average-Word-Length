@@ -1,0 +1,25 @@
+#Input Format 
+#A string containing multiple words(separated by space)
+
+#Output Format
+#A number representing the average length of each word, rounded up to the nearest whole number.
+
+phrase = input("")
+
+from math import *
+
+import string
+
+letters = string.ascii_letters
+
+new_phrase = ""
+
+for i in phrase:
+    if i in letters or i == " ":
+        new_phrase += i
+
+list = new_phrase.split()
+
+average = sum(len(word) for word in list) / len(list)
+        
+print(ceil(average))
